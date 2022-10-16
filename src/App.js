@@ -1,8 +1,14 @@
 import './App.css';
+import './Fields.js';
+import './Table.js';
 
 function App() {
   return (
-    <p>Testing to make sure this is in the bootstrap font.</p>
+    <div>
+      <h1 Classname='heading'>Expense Tracker</h1>
+      <Fields />
+      <Table />
+    </div>
   );
 }
 
