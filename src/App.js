@@ -11,7 +11,7 @@ function App() {
         type=''
         name=''
         date=''
-        amount=''
+        amount={0}
       />
     </div>
   );

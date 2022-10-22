@@ -1,9 +1,10 @@
 const Expense = (props) => {
     return (  
     <tr>
-      <td>Jim</td>
-      <td>00001</td>
-      <td>Blue</td>
+      <td> {props.type} </td>
+      <td> {props.name} </td>
+      <td> {props.date} </td>
+      <td> {props.amount} </td>
     </tr>
     );
 }

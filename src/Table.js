@@ -1,7 +1,7 @@
 const Table = () => {
     return (  
-        <table>
-            <tr>
+        <table className='table-container'>
+            <tr className='table'>
                 <th>Type</th>
                 <th>Name</th>
                 <th>Date</th>
