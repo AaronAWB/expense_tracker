@@ -25,8 +25,10 @@ const Form = () => {
                 <label for='date'>Date:</label>
                 <input type='date' id='date' required></input>
 
-                <label for='number'>Amount:</label>
-                <input type='number' id='amount' required></input>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="Amount" required></input>
+                    <label for="floatingInput">Amount</label>
+                </div>
 
             </form>
             <div className='submit-button-container'>
