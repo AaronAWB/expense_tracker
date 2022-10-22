@@ -1,13 +1,18 @@
-import './App.css';
+import './index.css';
 import Form from './Form';
-// import './Table.js';
+import Table from './Table.js';
 
 function App() {
   return (
-    <div>
-      <h1 Classname='heading'>Expense Tracker</h1>
+    <div className='app'>
+      <h1 className='heading'>Expense Tracker</h1>
       <Form />
-      {/* <Table /> */}
+      <Table
+        type=''
+        name=''
+        date=''
+        amount=''
+      />
     </div>
   );
 }

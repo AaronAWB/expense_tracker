@@ -1,6 +1,9 @@
+// import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 const Form = () => {
     return (
-        <>
+        <div className='fields-container'>
             <form className='fields'>
             
                 <label for='type'>Type:</label>
@@ -18,11 +21,13 @@ const Form = () => {
                 <input type='date' id='date' required></input>
 
                 <label for='number'>Amount:</label>
-                <input type='amount' id='amount' required></input>
+                <input type='number' id='amount' required></input>
 
             </form>
-            <button>Add a New Expense</button>
-        </>
+            <div className='submit-button-container'>
+                <button className='submit-button' variant='primary'>Add a New Expense</button>{' '}
+            </div>
+        </div>
     );
 }
  
