@@ -36,4 +36,4 @@ return (
 
 }
 
-export default ExpenseTable
+export default ExpenseTable;

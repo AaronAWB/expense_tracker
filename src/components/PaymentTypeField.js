@@ -1,6 +1,6 @@
 import React from 'react';
 
-const paymentTypeField = () => {
+const PaymentTypeField = () => {
     return (
         <select class="form-select" aria-label="Default select example">
             <option selected>Open this select menu</option>
@@ -11,4 +11,4 @@ const paymentTypeField = () => {
     )
 }
 
-export default paymentTypeField;
+export default PaymentTypeField;

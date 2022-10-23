@@ -1,12 +1,12 @@
 import React from 'react';
 
-const dateField = () => {
+const DateField = () => {
     return (
         <div className='mb-3'>
-            <input type='date' id='date' required></input>
             <label for='date'>Date:</label>
+            <input type='date' id='date' required></input>
         </div>
     )
 }
 
-export default dateField;
+export default DateField;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const descriptionField = () => {
+const DescriptionField = () => {
     return (
         <div className="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Description</label>
@@ -9,4 +9,4 @@ const descriptionField = () => {
     )
 }
 
-export default descriptionField;
+export default DescriptionField;
