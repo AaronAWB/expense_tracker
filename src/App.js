@@ -1,4 +1,3 @@
-import './index.css';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseTable from './components/ExpenseTable';
 

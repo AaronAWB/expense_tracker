@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const ExpenseForm = () => {
 
@@ -7,13 +8,25 @@ const ExpenseForm = () => {
     const [date, setDate] = useState('');
     const [amount, setAmount] = useState('');
 
+    const onSubmit = (event) => {
+        event.preventDefaul();
+        
+        const expense = {
+            id: uuidv4(),
+            description: description,
+            paymentType: paymentType,
+            date: date,
+            amount: amount,
+        };
+    }
+
     return (
         <div className='container'>
 
-            <form>
+            <form onSubmit={onSubmit}>
 
                 <div className="mb-3">
-                    <label for="description" class="form-label">Description</label>
+                    <label for="description" className="form-label">Description</label>
                     <input 
                         type="text" 
                         class="form-control" 
@@ -26,7 +39,7 @@ const ExpenseForm = () => {
                 </div>
 
                 <select 
-                    class="form-select" 
+                    className="form-select" 
                     aria-label="Default select example" 
                     required
                     value={paymentType}
@@ -54,7 +67,7 @@ const ExpenseForm = () => {
                     <label for="amount" class="form-label">Amount</label>
                     <input 
                         type="number" 
-                        class="form-control" 
+                        className="form-control" 
                         id="amount" placeholder="Amount" 
                         required
                         value={amount}
