@@ -1,12 +1,10 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
+import { useState } from 'react';
 
 const ExpenseTable = () => {
     const expenses = [
         { id: 123456, description: 'groceries', paymentType: 'card', date: '5/10/22', amount: 50 },
-        { id: 123456, description: 'groceries', paymentType: 'card', date: '5/10/22', amount: 50 },
-        { id: 123456, description: 'groceries', paymentType: 'card', date: '5/10/22', amount: 50 },
-        { id: 123456, description: 'groceries', paymentType: 'card', date: '5/10/22', amount: 50 }
     ]
 
     return (
@@ -14,8 +12,8 @@ const ExpenseTable = () => {
                 <table className='table'>
                     <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Payment Type</th>
                             <th>Date</th>
                             <th>Amount</th>
                         </tr>

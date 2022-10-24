@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { v4 as uuidv4 } from 'uuid';
 
 const ExpenseForm = () => {
@@ -7,9 +9,10 @@ const ExpenseForm = () => {
     const [paymentType, setPaymentType] = useState('');
     const [date, setDate] = useState('');
     const [amount, setAmount] = useState('');
+    const [expenses, setExpenses] = useState([]);
 
-    const onSubmit = (event) => {
-        event.preventDefaul();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         
         const expense = {
             id: uuidv4(),
@@ -18,12 +21,13 @@ const ExpenseForm = () => {
             date: date,
             amount: amount,
         };
+        
     }
 
     return (
         <div className='container'>
 
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit}>
 
                 <div className="mb-3">
                     <label for="description" className="form-label">Description</label>
@@ -75,9 +79,11 @@ const ExpenseForm = () => {
                     ></input>
                 </div>
 
-            </form>
+                <div className='text-center'>
+                    <button type='submit' className='btn btn-primary'>Submit Expense</button>
+                </div>
 
-            <button type='submit' className='btn btn-primary'>Submit</button>
+            </form>
 
         </div>
     )
