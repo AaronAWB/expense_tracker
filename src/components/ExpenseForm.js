@@ -5,49 +5,54 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ExpenseForm = () => {
 
-    const [description, setDescription] = useState('');
-    const [paymentType, setPaymentType] = useState('');
-    const [date, setDate] = useState('');
-    const [amount, setAmount] = useState('');
-    const [expenses, setExpenses] = useState([]);
+    const [formInputData, setFormInputData] = useState({
+        description: '',
+        paymentType: '',
+        date: '',
+        amount: '',
+    })
 
-    const handleSubmit = (event) => {
+    const handleFormInputData = (event) => {
         event.preventDefault();
         
-        const expense = {
-            id: uuidv4(),
-            description: description,
-            paymentType: paymentType,
-            date: date,
-            amount: amount,
-        };
-        
+        const inputName = event.target.getAttribute('name');
+        const inputValue = event.target.value;
+
+        const newInputData = {...formInputData};
+        newInputData[inputName] = inputValue;
+
+        setFormInputData(newInputData);
+     
+    }
+
+    const handleSubmit = () => {
+        event.preventDefault();
     }
 
     return (
         <div className='container'>
 
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <div className="mb-3">
                     <label for="description" className="form-label">Description</label>
                     <input 
                         type="text" 
                         class="form-control" 
-                        id="description" 
+                        id="description"
+                        name="description"
                         placeholder="Description" 
                         required
-                        value={description}
-                        onChange={(event) => setDescription(event.target.value)}
+                        onChange={handleFormInputData}
                     ></input>
                 </div>
 
                 <select 
                     className="form-select" 
                     aria-label="Default select example" 
+                    name="paymentType"
                     required
-                    value={paymentType}
-                    onChange={(event) => setPaymentType(event.target.value)}
+                    onChange={handleFormInputData}
                     >
                     <option selected>Select Payment Type</option>
                     <option value="Card">Card</option>
@@ -61,9 +66,9 @@ const ExpenseForm = () => {
                     <input 
                         type='date' 
                         id='date' 
+                        name='date'
                         required
-                        value={date}
-                        onChange={(event) => setDate(event.target.value)}
+                        onChange={handleFormInputData}
                     ></input>
                 </div>
 
@@ -72,10 +77,11 @@ const ExpenseForm = () => {
                     <input 
                         type="number" 
                         className="form-control" 
-                        id="amount" placeholder="Amount" 
+                        id="amount" 
+                        name="amount"
+                        placeholder="Amount" 
                         required
-                        value={amount}
-                        onChange={(event) => setAmount(event.target.value)}
+                        onChange={handleFormInputData}
                     ></input>
                 </div>
 
