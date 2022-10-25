@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from 'nanoid';
 
 const ExpenseForm = () => {
 
+    const [expenses, setExpenses] = useState('');
     const [formInputData, setFormInputData] = useState({
+        id: nanoid(),
         description: '',
         paymentType: '',
         date: '',
@@ -25,8 +27,19 @@ const ExpenseForm = () => {
      
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
         event.preventDefault();
+
+        const newExpense = {
+            description: formInputData.description,
+            paymentType: formInputData.paymentType,
+            date: formInputData.data,
+            amount: formInputData.amount
+        }
+
+        const newExpenses = [...expenses, newExpense];
+        setExpenses(newExpenses);
+        
     }
 
     return (
