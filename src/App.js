@@ -10,11 +10,21 @@ function App() {
     updateExpenses([...expenses, formData])
   }
 
+  const handleDelete = (expenseId) => {
+    const newExpenses = [...expenses];
+    const index = expenses.findIndex((expense) => expense.id === expenseId);
+    newExpenses.splice(index, 1);
+    updateExpenses(newExpenses);
+  }
+
   return (
     <div className='container'>
       <h1 className='mt-3 text-center'>Expense Tracker</h1>
       <ExpenseForm addExpense={addExpense} />
-      <ExpenseTable expenses={expenses}/>
+      <ExpenseTable 
+        expenses={expenses}
+        handleDelete={handleDelete}
+        />
     </div>
   );
 }
