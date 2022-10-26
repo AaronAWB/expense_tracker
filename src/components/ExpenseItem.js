@@ -1,4 +1,5 @@
 import React from 'react';
+import { TiDelete } from 'react-icons/ti';
 
 const ExpenseItem = (props) => {
     return (
@@ -7,6 +8,7 @@ const ExpenseItem = (props) => {
             <td>{props.paymentType}</td>
             <td>{props.date}</td>
             <td>${props.amount}</td>
+            <td><TiDelete size='1.5em'></TiDelete></td>
         </tr>
     )
 }

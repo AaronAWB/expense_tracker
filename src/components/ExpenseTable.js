@@ -13,6 +13,7 @@ const ExpenseTable = ({expenses}) => {
                             <th>Payment Type</th>
                             <th>Date</th>
                             <th>Amount</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
