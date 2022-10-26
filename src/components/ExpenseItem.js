@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExpenseItem = (props) => {
     return (
-        <tr>
+        <tr key={props.id}>
             <td>{props.description}</td>
             <td>{props.paymentType}</td>
             <td>{props.date}</td>
