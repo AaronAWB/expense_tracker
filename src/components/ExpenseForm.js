@@ -3,49 +3,32 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { nanoid } from 'nanoid';
 
-const ExpenseForm = () => {
+const ExpenseForm = ({addExpense}) => {
 
-    const [expenses, setExpenses] = useState('');
-    const [formInputData, setFormInputData] = useState({
+    const [formData, setFormData] = useState({
         id: nanoid(),
         description: '',
-        paymentType: '',
+        type: '',
         date: '',
         amount: '',
     })
 
-    const handleFormInputData = (event) => {
+    const handleFormInput = (event) => {
         event.preventDefault();
-        
-        const inputName = event.target.getAttribute('name');
-        const inputValue = event.target.value;
-
-        const newInputData = {...formInputData};
-        newInputData[inputName] = inputValue;
-
-        setFormInputData(newInputData);
-     
+        setFormData({...formData, [event.target.name]: event.target.value});
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        addExpense(formData);
+        setFormData({ id: '', description: '', type: '', date: '', amount: ''})
 
-        const newExpense = {
-            description: formInputData.description,
-            paymentType: formInputData.paymentType,
-            date: formInputData.data,
-            amount: formInputData.amount
-        }
-
-        const newExpenses = [...expenses, newExpense];
-        setExpenses(newExpenses);
-        
     }
 
     return (
         <div className='container'>
 
-            <form>
+            <form onSubmit={handleSubmit}>
 
                 <div className="mb-3">
                     <label for="description" className="form-label">Description</label>
@@ -56,16 +39,18 @@ const ExpenseForm = () => {
                         name="description"
                         placeholder="Description" 
                         required
-                        onChange={handleFormInputData}
+                        value={formData.description}
+                        onChange={handleFormInput}
                     ></input>
                 </div>
 
                 <select 
                     className="form-select" 
                     aria-label="Default select example" 
-                    name="paymentType"
+                    name="type"
                     required
-                    onChange={handleFormInputData}
+                    value={formData.type}
+                    onChange={handleFormInput}
                     >
                     <option selected>Select Payment Type</option>
                     <option value="Card">Card</option>
@@ -81,7 +66,8 @@ const ExpenseForm = () => {
                         id='date' 
                         name='date'
                         required
-                        onChange={handleFormInputData}
+                        value={formData.date}
+                        onChange={handleFormInput}
                     ></input>
                 </div>
 
@@ -94,7 +80,8 @@ const ExpenseForm = () => {
                         name="amount"
                         placeholder="Amount" 
                         required
-                        onChange={handleFormInputData}
+                        value={formData.amount}
+                        onChange={handleFormInput}
                     ></input>
                 </div>
 
