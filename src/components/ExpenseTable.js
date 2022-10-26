@@ -2,7 +2,7 @@ import React from 'react';
 import ExpenseItem from './ExpenseItem';
 
 
-const ExpenseTable = ({expenses}) => {
+const ExpenseTable = ({expenses, handleDelete}) => {
     
     return (
         <div className='container mt-4'>
@@ -21,9 +21,11 @@ const ExpenseTable = ({expenses}) => {
                             <ExpenseItem 
                             id={expense.id} 
                             description={expense.description} 
-                            paymentType={expense.type} 
+                            type={expense.type} 
                             date={expense.date}
-                            amount={expense.amount} />
+                            amount={expense.amount} 
+                            handleDelete={handleDelete}
+                            />
                         )))}
                     </tbody>
                 </table>

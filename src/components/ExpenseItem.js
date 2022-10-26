@@ -1,14 +1,17 @@
 import React from 'react';
-import { TiDelete } from 'react-icons/ti';
 
 const ExpenseItem = (props) => {
     return (
         <tr key={props.id}>
             <td>{props.description}</td>
-            <td>{props.paymentType}</td>
+            <td>{props.type}</td>
             <td>{props.date}</td>
             <td>${props.amount}</td>
-            <td><TiDelete size='1.5em'></TiDelete></td>
+            <td>
+                <span>
+                    <button type='button' className='btn btn-outline-danger btn-sm' onClick={() => props.handleDelete(props.id)}>Delete</button>
+                </span>
+            </td>
         </tr>
     )
 }
