@@ -9,21 +9,21 @@ const ExpenseTable = ({expenses, handleDelete}) => {
                 <table className='table'>
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Payment Type</th>
                             <th>Date</th>
+                            <th>Description</th>
                             <th>Amount</th>
+                            <th>Location</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {expenses.map(((expense)=>(
                             <ExpenseItem 
-                            id={expense.id} 
-                            description={expense.description} 
-                            type={expense.type} 
+                            id={expense.id}
                             date={expense.date}
+                            description={expense.description}         
                             amount={expense.amount} 
+                            location={expense.location}
                             handleDelete={handleDelete}
                             />
                         )))}

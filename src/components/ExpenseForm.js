@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 const ExpenseForm = ({addExpense}) => {
 
     const [formData, setFormData] = useState({
-        id: nanoid(),
+        id: '',
         date: '',
         description: '',
         amount: '',
@@ -21,8 +21,7 @@ const ExpenseForm = ({addExpense}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addExpense(formData);
-        setFormData({ id: '', description: '', type: '', date: '', amount: ''})
-
+        setFormData({ id: '', date: '', description: '', amount: '', location: ''})
     }
 
     return (
@@ -71,7 +70,7 @@ const ExpenseForm = ({addExpense}) => {
                 </div>
 
                 <div className="mb-3">
-                    <label for="location" className="form-label">Description</label>
+                    <label for="location" className="form-label">Location</label>
                     <input 
                         type="text" 
                         class="form-control" 
