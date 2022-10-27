@@ -5,15 +5,15 @@ import ExpenseItem from './ExpenseItem';
 const ExpenseTable = ({expenses, handleDelete}) => {
     
     return (
-        <div className='container mt-4'>
+        <div className='container mt-4 table-bordered'>
                 <table className='table'>
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                            <th>Location</th>
-                            <th>Delete</th>
+                            <th scope='col'>Date</th>
+                            <th scope='col'>Description</th>
+                            <th scope='col'>Amount</th>
+                            <th scope='col'>Location</th>
+                            <th scope='col'>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

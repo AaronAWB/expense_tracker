@@ -20,16 +20,22 @@ const ExpenseForm = ({addExpense}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setUniqueId();
         addExpense(formData);
         setFormData({ id: '', date: '', description: '', amount: '', location: ''})
     }
 
+    const setUniqueId = () => {
+        let uniqueId = nanoid();
+        setFormData({...formData, id: uniqueId});
+    }
+
     return (
-        <div className='container'>
+        <div className='container border rounded'>
 
             <form onSubmit={handleSubmit}>
 
-            <div className='mb-3'>
+            <div className='mb-3 mt-3'>
                     <label for='date'>Date:</label>
                     <input 
                         type='date' 
@@ -83,7 +89,7 @@ const ExpenseForm = ({addExpense}) => {
                     ></input>
                 </div>
 
-                <div className='text-center'>
+                <div className='text-center mb-3'>
                     <button type='submit' className='btn btn-primary'>Submit Expense</button>
                 </div>
 
