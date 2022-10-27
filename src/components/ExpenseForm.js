@@ -7,10 +7,10 @@ const ExpenseForm = ({addExpense}) => {
 
     const [formData, setFormData] = useState({
         id: nanoid(),
-        description: '',
-        type: '',
         date: '',
+        description: '',
         amount: '',
+        location: ''
     })
 
     const handleFormInput = (event) => {
@@ -30,6 +30,18 @@ const ExpenseForm = ({addExpense}) => {
 
             <form onSubmit={handleSubmit}>
 
+            <div className='mb-3'>
+                    <label for='date'>Date:</label>
+                    <input 
+                        type='date' 
+                        id='date' 
+                        name='date'
+                        required
+                        value={formData.date}
+                        onChange={handleFormInput}
+                    ></input>
+                </div>
+
                 <div className="mb-3">
                     <label for="description" className="form-label">Description</label>
                     <input 
@@ -44,33 +56,6 @@ const ExpenseForm = ({addExpense}) => {
                     ></input>
                 </div>
 
-                <select 
-                    className="form-select" 
-                    aria-label="Default select example" 
-                    name="type"
-                    required
-                    value={formData.type}
-                    onChange={handleFormInput}
-                    >
-                    <option selected>Select Payment Type</option>
-                    <option value="Card">Card</option>
-                    <option value="Cash">Cash</option>
-                    <option value="Cryptocurrency">CryptoCurrency</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <div className='mb-3'>
-                    <label for='date'>Date:</label>
-                    <input 
-                        type='date' 
-                        id='date' 
-                        name='date'
-                        required
-                        value={formData.date}
-                        onChange={handleFormInput}
-                    ></input>
-                </div>
-
                 <div className="mb-3">
                     <label for="amount" class="form-label">Amount</label>
                     <input 
@@ -81,6 +66,20 @@ const ExpenseForm = ({addExpense}) => {
                         placeholder="Amount" 
                         required
                         value={formData.amount}
+                        onChange={handleFormInput}
+                    ></input>
+                </div>
+
+                <div className="mb-3">
+                    <label for="location" className="form-label">Description</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="location"
+                        name="location"
+                        placeholder="Location" 
+                        required
+                        value={formData.location}
                         onChange={handleFormInput}
                     ></input>
                 </div>

@@ -8,9 +8,12 @@ const ExpenseItem = (props) => {
             <td>{props.date}</td>
             <td>${props.amount}</td>
             <td>
-                <span>
-                    <button type='button' className='btn btn-outline-danger btn-sm' onClick={() => props.handleDelete(props.id)}>Delete</button>
-                </span>
+                 <button 
+                    type='button' 
+                    className='btn btn-outline-danger btn-sm' 
+                    onClick={() => props.handleDelete(props.id)}>
+                    Delete
+                </button>
             </td>
         </tr>
     )
