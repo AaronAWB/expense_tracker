@@ -1,13 +1,12 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
 
-
 const ExpenseTable = ({expenses, handleDelete}) => {
     
     return (
         <div className='container mt-4 table-bordered'>
-                <table className='table'>
-                    <thead>
+                <table className='table table-striped'>
+                    <thead className='thead-light'>
                         <tr>
                             <th scope='col'>Date</th>
                             <th scope='col'>Description</th>

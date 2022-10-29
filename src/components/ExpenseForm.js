@@ -31,7 +31,7 @@ const ExpenseForm = ({addExpense}) => {
     }
 
     return (
-        <div className='container border rounded'>
+        <div className='container-fluid border rounded'>
 
             <form onSubmit={handleSubmit}>
 
