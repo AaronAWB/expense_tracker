@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import { nanoid } from 'nanoid';
 
 const ExpenseForm = ({addExpense}) => {
@@ -34,7 +32,7 @@ const ExpenseForm = ({addExpense}) => {
         <div className='container-fluid border rounded'>
 
             <form className='caption-top' onSubmit={handleSubmit}>
-            <caption>Add New Expense</caption>
+            <caption className='form-caption'>Add New Expense</caption>
 
                 <div className='row'>
 
