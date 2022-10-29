@@ -12,14 +12,14 @@ function App() {
 
   const handleDelete = (expenseId) => {
     const newExpenses = [...expenses];
-    const index = expenses.findIndex((expense) => expense.id === expenseId);
+    const index = expenses.findIndex((expense) => expenses.id === expenseId);
     newExpenses.splice(index, 1);
     updateExpenses(newExpenses);
   }
 
   return (
     <div className='container'>
-      <h1 className='mt-3 text-center'>Expense Tracker</h1>
+      <h1 className='mt-4 mb-4 text-center'>Expense Tracker</h1>
       <ExpenseForm addExpense={addExpense} />
       <ExpenseTable 
         expenses={expenses}

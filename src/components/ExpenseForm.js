@@ -33,7 +33,8 @@ const ExpenseForm = ({addExpense}) => {
     return (
         <div className='container-fluid border rounded'>
 
-            <form onSubmit={handleSubmit}>
+            <form className='caption-top' onSubmit={handleSubmit}>
+            <caption>Add New Expense</caption>
 
                 <div className='row'>
 
@@ -56,7 +57,7 @@ const ExpenseForm = ({addExpense}) => {
                             class="form-control" 
                             id="description"
                             name="description"
-                            placeholder="Description" 
+                            placeholder="Enter description..." 
                             required
                             value={formData.description}
                             onChange={handleFormInput}
@@ -74,7 +75,7 @@ const ExpenseForm = ({addExpense}) => {
                             className="form-control" 
                             id="amount" 
                             name="amount"
-                            placeholder="Amount" 
+                            placeholder="Enter amount..." 
                             required
                             value={formData.amount}
                             onChange={handleFormInput}
@@ -88,7 +89,7 @@ const ExpenseForm = ({addExpense}) => {
                             class="form-control" 
                             id="location"
                             name="location"
-                            placeholder="Location" 
+                            placeholder="Enter location..." 
                             required
                             value={formData.location}
                             onChange={handleFormInput}
@@ -98,7 +99,7 @@ const ExpenseForm = ({addExpense}) => {
                 </div>
 
                 <div className='text-center mb-3'>
-                    <button type='submit' className='btn btn-primary'>Submit Expense</button>
+                    <button type='submit' className='btn btn-primary'>Add Expense</button>
                 </div>
 
             </form>
