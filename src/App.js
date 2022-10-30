@@ -4,17 +4,17 @@ import ExpenseTable from './components/ExpenseTable';
 
 function App() {
 
-  const [expenses, updateExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   const addExpense = (formData) => {
-    updateExpenses([...expenses, formData])
+    setExpenses([...expenses, formData])
   }
 
   const handleDelete = (expenseId) => {
-    const newExpenses = [...expenses];
-    const index = expenses.findIndex((expense) => expenses.id === expenseId);
-    newExpenses.splice(index, 1);
-    updateExpenses(newExpenses);
+    const currentExpenses = [...expenses];
+    const index = expenses.findIndex((expense) => expense.id === expenseId);
+    currentExpenses.splice(index, 1);
+    setExpenses(currentExpenses);
   }
 
   return (

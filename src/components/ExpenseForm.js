@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 const ExpenseForm = ({addExpense}) => {
 
     const [formData, setFormData] = useState({
-        id: '',
+        id: nanoid(),
         date: '',
         description: '',
         amount: '',
@@ -18,14 +18,8 @@ const ExpenseForm = ({addExpense}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setUniqueId();
         addExpense(formData);
-        setFormData({ id: '', date: '', description: '', amount: '', location: ''})
-    }
-
-    const setUniqueId = () => {
-        let uniqueId = nanoid();
-        setFormData({...formData, id: uniqueId});
+        setFormData({ id: nanoid(), date: '', description: '', amount: '', location: ''})
     }
 
     return (
@@ -34,7 +28,7 @@ const ExpenseForm = ({addExpense}) => {
             <form className='caption-top' onSubmit={handleSubmit}>
             <caption className='form-caption'>Add New Expense</caption>
 
-                <div className='row'>
+                <div className='row form-group'>
 
                     <div className='mb-3 mt-3 col'>
                         <label for='date'>Date:</label>
@@ -55,7 +49,7 @@ const ExpenseForm = ({addExpense}) => {
                             class="form-control" 
                             id="description"
                             name="description"
-                            placeholder="Enter description..." 
+                            placeholder="What did you spend on?" 
                             required
                             value={formData.description}
                             onChange={handleFormInput}
@@ -73,7 +67,7 @@ const ExpenseForm = ({addExpense}) => {
                             className="form-control" 
                             id="amount" 
                             name="amount"
-                            placeholder="Enter amount..." 
+                            placeholder="How much did you spend?" 
                             required
                             value={formData.amount}
                             onChange={handleFormInput}
@@ -87,7 +81,7 @@ const ExpenseForm = ({addExpense}) => {
                             class="form-control" 
                             id="location"
                             name="location"
-                            placeholder="Enter location..." 
+                            placeholder="Where did you spend?" 
                             required
                             value={formData.location}
                             onChange={handleFormInput}

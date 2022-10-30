@@ -8,12 +8,12 @@ const ExpenseTable = ({expenses, handleDelete}) => {
                 <table className='table caption-top'>
                 <caption>Expense List</caption>
                     <thead className='table-light text-center'>
-                        <tr classname='row'>
-                            <th width='col'>Date</th>
-                            <th scope='col'>Description</th>
-                            <th scope='col'>Amount</th>
-                            <th scope='col'>Location</th>
-                            <th scope='col'>Delete</th>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Location</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody className='text-center'>
