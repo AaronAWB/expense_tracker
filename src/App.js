@@ -17,11 +17,16 @@ function App() {
     setExpenses(currentExpenses);
   }
 
-  
+  useEffect(() => {
+    const data = localStorage.getItem('expenses');
+    if (data) {
+      setExpenses(JSON.parse(data));
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('expenses', JSON.stringify(expenses))
-  }, [expenses])
+    }, [expenses])
 
   return (
     <div className='container'>
