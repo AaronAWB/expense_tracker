@@ -1,4 +1,23 @@
+:root {
+    background-color: rgb(8, 8, 58);
+}
+
+#root {
+    background-color: rgb(8, 8, 58);
+}
+
+h1 {
+    color: darkorange;
+}
 
 .form-caption {
     display: flex;
+}
+
+.container-fluid {
+    background-color: white;
+}
+
+.expense-table {
+    background-color: white;
 }

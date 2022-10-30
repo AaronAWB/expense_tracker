@@ -4,9 +4,9 @@ import ExpenseItem from './ExpenseItem';
 const ExpenseTable = ({expenses, handleDelete}) => {
     
     return (
-        <div className='container mt-4 border rounded'>
+        <div className='container mt-4 border rounded expense-table'>
                 <table className='table caption-top'>
-                <caption>Expense List</caption>
+                <caption className='table-caption'>Expense List</caption>
                     <thead className='table-light text-center'>
                         <tr>
                             <th>Date</th>
