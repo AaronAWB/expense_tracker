@@ -31,22 +31,23 @@ const ExpenseForm = ({addExpense}) => {
                 <div className='row form-group'>
 
                     <div className='mb-3 mt-3 col'>
-                        <label for='date'>Date:</label>
+                        <label htmlFor='date' className='mb-2'>Date</label>
                         <input 
                             type='date' 
                             id='date' 
                             name='date'
+                            className='form-control'
                             required
                             value={formData.date}
                             onChange={handleFormInput}
                         ></input>
                     </div>
 
-                    <div className='mb-3 col'>
-                        <label for="description" className="form-label">Description</label>
+                    <div className='mb-3 mt-3 col'>
+                        <label htmlFor="description" className="form-label">Description</label>
                         <input 
-                            type="text" 
-                            class="form-control" 
+                            type='text' 
+                            className='form-control'
                             id="description"
                             name="description"
                             placeholder="What did you spend on?" 
@@ -61,7 +62,7 @@ const ExpenseForm = ({addExpense}) => {
                 <div className='row'>
 
                     <div className="mb-3 col">
-                        <label for="amount" class="form-label">Amount</label>
+                        <label htmlFor="amount" class="form-label">Amount</label>
                         <input 
                             type="number" 
                             className="form-control" 
@@ -75,10 +76,10 @@ const ExpenseForm = ({addExpense}) => {
                     </div>
 
                     <div className="mb-3 col">
-                        <label for="location" className="form-label">Location</label>
+                        <label htmlFor="location" className="form-label">Location</label>
                         <input 
                             type="text" 
-                            class="form-control" 
+                            className="form-control" 
                             id="location"
                             name="location"
                             placeholder="Where did you spend?" 
@@ -90,7 +91,7 @@ const ExpenseForm = ({addExpense}) => {
 
                 </div>
 
-                <div className='text-center mb-3'>
+                <div className='text-center mb-4 mt-2'>
                     <button type='submit' className='btn btn-primary'>Add Expense</button>
                 </div>
 
