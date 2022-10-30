@@ -1,13 +1,13 @@
 :root {
-    background-color: rgb(8, 8, 58);
+    background-color: rgb(31, 31, 94);
 }
 
 #root {
-    background-color: rgb(8, 8, 58);
+    background-color: rgb(31, 31, 94);
 }
 
 h1 {
-    color: darkorange;
+    color: white;
 }
 
 .form-caption {
@@ -16,8 +16,10 @@ h1 {
 
 .container-fluid {
     background-color: white;
+    box-shadow: 5px 5px 5px rgb(86, 86, 196);
 }
 
 .expense-table {
     background-color: white;
+    box-shadow: 5px 5px 5px rgb(86, 86, 196);
 }
