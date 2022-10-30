@@ -19,8 +19,8 @@ function App() {
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('expenses'));
-    if (storedData) {
-      setExpenses([storedData]);
+    if (storedData != '') {
+      setExpenses(storedData);
     }
   }, []);
 
