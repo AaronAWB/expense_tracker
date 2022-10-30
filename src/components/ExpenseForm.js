@@ -48,8 +48,8 @@ const ExpenseForm = ({addExpense}) => {
                         <input 
                             type='text' 
                             className='form-control'
-                            id="description"
-                            name="description"
+                            id='description'
+                            name='description'
                             placeholder="What did you spend on?" 
                             required
                             value={formData.description}
@@ -61,13 +61,13 @@ const ExpenseForm = ({addExpense}) => {
 
                 <div className='row'>
 
-                    <div className="mb-3 col">
-                        <label htmlFor="amount" class="form-label">Amount</label>
+                    <div className='mb-3 col'>
+                        <label htmlFor='amount' class='form-label'>Amount</label>
                         <input 
-                            type="number" 
-                            className="form-control" 
-                            id="amount" 
-                            name="amount"
+                            type='number' 
+                            className='form-control' 
+                            id='amount' 
+                            name='amount'
                             placeholder="How much did you spend?" 
                             required
                             value={formData.amount}
@@ -75,13 +75,13 @@ const ExpenseForm = ({addExpense}) => {
                         ></input>
                     </div>
 
-                    <div className="mb-3 col">
-                        <label htmlFor="location" className="form-label">Location</label>
+                    <div className='mb-3 col'>
+                        <label htmlFor='location' className='form-label'>Location</label>
                         <input 
-                            type="text" 
-                            className="form-control" 
-                            id="location"
-                            name="location"
+                            type='text' 
+                            className='form-control'
+                            id='location'
+                            name='location'
                             placeholder="Where did you spend?" 
                             required
                             value={formData.location}
