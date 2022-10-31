@@ -16,10 +16,10 @@ h1 {
 
 .container-fluid {
     background-color: white;
-    box-shadow: 5px 5px 5px rgb(86, 86, 196);
+    box-shadow: 4px 4px 4px rgb(86, 86, 196);
 }
 
 .expense-table {
     background-color: white;
-    box-shadow: 5px 5px 5px rgb(86, 86, 196);
+    box-shadow: 4px 4px 4px rgb(86, 86, 196);
 }
