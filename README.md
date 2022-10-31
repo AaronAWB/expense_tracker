@@ -6,7 +6,7 @@ Launch <a href='https://expense-tracker-sdmm.herokuapp.com/'>here</a>
 
 ## Summary
 
-This Expense Tracker app was built using React and relies primarily on Bootstrap 5 for styling.
+This Expense Tracker app was built in JavaScript using the React library and relies primarily on Bootstrap 5 for styling.
 
 The user can enter a new expense entry in the form field fields, which will be displayed in the expense list below after clicking the "Add Expense" button. Afther that, the user can delete indvidual expense entries by clicking the "Delete" button for that row. All expense entries will be saved on closing or refreshing the browser.
 
