@@ -2,7 +2,7 @@
 
 Launch <a href='https://expense-tracker-sdmm.herokuapp.com/'>here</a>
 
-
+<img width="1566" alt="Screen Shot 2022-10-30 at 5 47 16 PM" src="https://user-images.githubusercontent.com/108595340/198910899-1e6d5af4-aaa2-47eb-9ac7-134ec83cd586.png">
 
 ## Summary
 
