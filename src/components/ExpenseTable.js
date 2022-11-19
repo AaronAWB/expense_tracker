@@ -4,7 +4,7 @@ import ExpenseItem from './ExpenseItem';
 const ExpenseTable = ({expenses, handleDelete}) => {
     
     return (
-        <div className='container mt-4 border rounded expense-table'>
+        <div className='container mt-4 border rounded expense-table shadow p-3 mb-5'>
                 <table className='table caption-top'>
                 <caption className='table-caption'>Expense List</caption>
                     <thead className='table-light text-center'>

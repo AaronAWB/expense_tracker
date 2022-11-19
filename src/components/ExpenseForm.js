@@ -23,7 +23,7 @@ const ExpenseForm = ({addExpense}) => {
     }
 
     return (
-        <div className='container-fluid border rounded'>
+        <div className='container-fluid border rounded shadow p-3 mb-5'>
 
             <form className='caption-top' onSubmit={handleSubmit}>
             <caption className='form-caption'>Add New Expense</caption>
