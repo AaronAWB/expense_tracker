@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('expenses'));
-    if (storedData != '') {
+    if (storedData != null) {
       setExpenses(storedData);
     }
   }, []);
