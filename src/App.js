@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseTable from './components/ExpenseTable';
 
@@ -6,10 +6,15 @@ function App() {
 
   const [expenses, setExpenses] = useState([]);
 
+  const firstRender = useRef(true);
+
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('expenses'));
-    if (storedData != null) {
-      setExpenses(storedData);
+    if (firstRender.current) {
+      const storedData = JSON.parse(localStorage.getItem('expenses'));
+      if (storedData != null) {
+        setExpenses(storedData);
+      }
+      firstRender.current = false;
     }
   }, []);
 
@@ -28,7 +33,7 @@ function App() {
       })
     });
   }
-
+ 
   return (
     <div className='container'>
       <h1 className='mt-4 mb-4 text-center'>Expense Tracker</h1>

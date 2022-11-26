@@ -62,7 +62,7 @@ const ExpenseForm = ({addExpense}) => {
                 <div className='row'>
 
                     <div className='mb-3 col'>
-                        <label htmlFor='amount' class='form-label'>Amount</label>
+                        <label htmlFor='amount' className='form-label'>Amount</label>
                         <input 
                             type='number' 
                             className='form-control' 
