@@ -6,17 +6,6 @@ function App() {
 
   const [expenses, setExpenses] = useState([]);
 
-  const addExpense = (formData) => {
-    setExpenses([...expenses, formData]);
-  }
-
-  const handleDelete = (expenseId) => {
-    const currentExpenses = [...expenses];
-    const index = expenses.findIndex((expense) => expense.id === expenseId);
-    currentExpenses.splice(index, 1);
-    setExpenses(currentExpenses);
-  }
-
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('expenses'));
     if (storedData != '') {
@@ -27,6 +16,17 @@ function App() {
   useEffect(() => {
     localStorage.setItem('expenses', JSON.stringify(expenses))
     }, [expenses])
+
+  const addExpense = (formData) => {
+    setExpenses([...expenses, formData]);
+  }
+
+  const handleDelete = (expenseId) => {
+    const currentExpenses = [...expenses];
+    const index = expenses.findIndex((expense) => expense.id === expenseId);
+    currentExpenses.splice(index, 1);
+    setExpenses(currentExpenses);
+  }
 
   return (
     <div className='container'>
