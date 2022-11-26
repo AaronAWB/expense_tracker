@@ -22,10 +22,11 @@ function App() {
   }
 
   const handleDelete = (expenseId) => {
-    const currentExpenses = [...expenses];
-    const index = expenses.findIndex((expense) => expense.id === expenseId);
-    currentExpenses.splice(index, 1);
-    setExpenses(currentExpenses);
+     setExpenses((prevExpenses) => {
+      return prevExpenses.filter((expense) => { 
+        return expense.id !== expenseId; 
+      })
+    });
   }
 
   return (
